@@ -21,7 +21,7 @@ predict:
 evaluate:
 	$(PYTHON) src/evaluate.py
 
-all: setup download-data preprocess features train predict evaluate
+all: download-data preprocess features train predict evaluate
 
 clean:
 	rm -rf data/processed/*

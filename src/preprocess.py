@@ -7,8 +7,8 @@ def preprocess_data():
     df = pd.read_csv("data/raw/titanic.csv")
 
     # Handle missing values
-    df['Age'].fillna(df['Age'].median(), inplace=True)
-    df['Embarked'].fillna(df['Embarked'].mode()[0], inplace=True)
+    df['Age'] = df['Age'].fillna(df['Age'].median())
+    df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
 
     # Encode categorical variables
     df['Sex'] = df['Sex'].map({'female': 0, 'male': 1})
